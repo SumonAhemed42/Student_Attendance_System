@@ -1,0 +1,603 @@
+/*
+-- Defined by : Bitta Boibhob.
+-- Created at : Tue, 9:10 am, 16 Aug 2022
+*/
+
+@use "./font_family" as *;
+@use "./variable" as *;
+// 
+@mixin ff-psl {
+    font-family: "Google Sans";
+    letter-spacing: 1.2px;
+    font-size: $fs-14;
+    font-weight: bold;
+}
+
+@mixin ff-psl-2 {
+    font-family: "Google Sans T";
+    letter-spacing: 1px;
+    font-size: $fs-15;
+    font-weight: bold;
+}
+
+@mixin google-icon-fill {
+    font-variation-settings: "FILL" 1, "wght" 700, "GRAD" 0, "opsz" 48;
+}
+
+@mixin scroll-bar-hidden {
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+@mixin my-scroll-bar($width) {
+    &::-webkit-scrollbar {
+        width: $width;
+    }
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+        background: $l-gray-3;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+        background: $gray;
+    }
+}
+
+
+/* **************************************** */
+
+@mixin placeholder_show_hide {
+    &[placeholder]::-webkit-input-placeholder {
+        opacity: 0;
+    }
+    &[placeholder]:focus::-webkit-input-placeholder {
+        opacity: 1;
+        transition: opacity 0.5s ease-in-out;
+    }
+}
+
+
+/* **************************************** */
+
+@mixin datetime_show_hide {
+    &[type=datetime-local]:required:invalid::-webkit-datetime-edit {
+        color: transparent;
+    }
+    &[type=datetime-local]:focus::-webkit-datetime-edit {
+        color: black !important;
+    }
+}
+
+
+/* **************************************** */
+
+@mixin opacity_none {
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.2s ease-in-out;
+}
+
+
+/* **************************************** */
+
+@mixin hypertxt-blue {
+    @include ff-psl;
+    color: $blue;
+    &:hover {
+        color: blue;
+        cursor: pointer;
+    }
+}
+
+@mixin menu {
+    @include f-ccr;
+    border-radius: 50%;
+    padding: 0 2px;
+    color: $gray;
+    &:hover {
+        background: rgba(128, 128, 128, 0.2);
+        cursor: pointer;
+    }
+    ul {
+        position: absolute;
+        top: 28px;
+        right: 0;
+        background: white;
+        color: black;
+        min-width: 100px;
+        border-radius: 6px;
+        overflow: hidden;
+        display: none;
+        z-index: 1;
+        box-shadow: $bx-sh-g-4;
+        li {
+            padding: 8px;
+            text-align: center;
+            &:hover {
+                background: $l-blue-2;
+                color: $blue;
+            }
+        }
+    } //ul
+}
+
+
+/* **************************************** */
+
+@mixin text-overflow-control($width) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: normal;
+    width: $width;
+    display: block;
+}
+
+
+/* **************************************** */
+
+@mixin btn-blue {
+    background: $blue;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 4px;
+    @include ff-psl;
+    border: 1px solid transparent;
+    // box-shadow: inset 0 2px 0 0 hsl(0deg 0% 100% / 40%);
+    &:hover {
+        cursor: pointer;
+        background: #0069da;
+    }
+}
+
+@mixin btn-orange {
+    background: #fd7e14;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 4px;
+    @include ff-psl;
+    border: 1px solid transparent;
+    // box-shadow: inset 0 2px 0 0 hsl(0deg 0% 100% / 40%);
+    &:hover {
+        cursor: pointer;
+        background: #e06500;
+    }
+}
+
+@mixin btn-gray {
+    background: white;
+    color: $gray;
+    padding: 8px 16px;
+    border-radius: 4px;
+    @include ff-psl;
+    border: 1px solid transparent;
+    border: 1px solid #dadce0;
+    &:hover {
+        cursor: pointer;
+        background: $l-gray;
+    }
+}
+
+@mixin btn-gray-blue {
+    color: $gray;
+    @include ff-psl;
+    border: 1px solid $border-gray;
+    border-radius: 4px;
+    padding: 8px 16px;
+    min-width: 90px;
+    &:hover {
+        border-color: $blue;
+        color: $blue;
+        background: $l-blue;
+        cursor: pointer;
+    }
+}
+
+
+/* **************************************** */
+
+// ----
+// 
+// Input box style
+@mixin input-box($c) {
+    border: 1px solid $c;
+    padding: 8px 16px;
+    border-radius: 8px;
+    &:focus-within {
+        border-width: 2px;
+        padding: 7px 15px;
+    }
+}
+
+@mixin input-box-2($c) {
+    border: 1px solid $c;
+    padding: 8px;
+    border-radius: 8px;
+    &:focus-within {
+        border-width: 2px;
+        padding: 7px;
+    }
+}
+
+@mixin txt-blink($color) {
+    animation: blink 2s infinite;
+    @keyframes blink {
+        0% {
+            color: $color
+        }
+        10% {
+            color: white;
+        }
+        20% {
+            color: $color
+        }
+        100% {
+            color: $color
+        }
+    }
+}
+
+@mixin animate-shiny($t) {
+    animation: shiny $t ease-in-out infinite;
+    @keyframes shiny {
+        0% {
+            transform: scale(0) rotate(45deg);
+            opacity: 0;
+        }
+        50% {
+            transform: scale(0) rotate(45deg);
+            opacity: 0.5;
+        }
+        51% {
+            transform: scale(4) rotate(45deg);
+            opacity: 1;
+        }
+        100% {
+            transform: scale(80) rotate(45deg);
+            opacity: 0;
+        }
+    }
+}
+
+@mixin apear {
+    opacity: 1;
+    pointer-events: all;
+    transition: all 0.3s ease-in-out;
+}
+
+@mixin disapear {
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease-in-out;
+}
+
+@mixin bx-sh-outset {
+    background: white;
+    box-shadow: inset 1px 0 0 #dadce0, inset -1px 0 0 #dadce0, 0 1px 2px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%);
+}
+
+@mixin input-box-type-number-icon-hide {
+    -moz-appearance: textfield;
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+        // -webkit-appearance: none;
+        appearance: none;
+        margin: 0;
+    }
+}
+
+@mixin cursor-pointer {
+    cursor: pointer;
+    * {
+        cursor: pointer;
+    }
+}
+
+@keyframes primary-indeterminate-translate {
+    0% {
+        transform: translateX(-145.166611%)
+    }
+    20% {
+        animation-timing-function: cubic-bezier(0.5, 0, 0.701732, 0.495819);
+        transform: translateX(-145.166611%)
+    }
+    59.15% {
+        animation-timing-function: cubic-bezier(0.302435, 0.381352, 0.55, 0.956352);
+        transform: translateX(-61.495191%)
+    }
+    to {
+        /* transform: translateX(55.444446%) */
+        transform: translateX(100%)
+    }
+}
+
+@keyframes primary-indeterminate-scale {
+    0% {
+        transform: scaleX(0.08)
+    }
+    36.65% {
+        animation-timing-function: cubic-bezier(0.334731, 0.12482, 0.785844, 1);
+        transform: scaleX(0.08)
+    }
+    69.15% {
+        animation-timing-function: cubic-bezier(0.06, 0.11, 0.6, 1);
+        transform: scaleX(0.661479)
+    }
+    to {
+        transform: scaleX(0.08)
+    }
+}
+
+@keyframes auxiliary-indeterminate-translate {
+    0% {
+        animation-timing-function: cubic-bezier(0.15, 0, 0.515058, 0.409685);
+        /* transform: translateX(-54.888891%) */
+        transform: translateX(-100.888891%)
+    }
+    25% {
+        animation-timing-function: cubic-bezier(0.31033, 0.284058, 0.8, 0.733712);
+        transform: translateX(-17.236978%)
+    }
+    48.35% {
+        animation-timing-function: cubic-bezier(0.4, 0.627035, 0.6, 0.902026);
+        transform: translateX(29.497274%)
+    }
+    to {
+        transform: translateX(105.388891%)
+    }
+}
+
+@keyframes auxiliary-indeterminate-scale {
+    0% {
+        animation-timing-function: cubic-bezier(0.205028, 0.057051, 0.57661, 0.453971);
+        transform: scaleX(0.08)
+    }
+    19.15% {
+        animation-timing-function: cubic-bezier(0.152313, 0.196432, 0.648374, 1.004315);
+        transform: scaleX(0.457104)
+    }
+    44.15% {
+        animation-timing-function: cubic-bezier(0.257759, 0.003163, 0.211762, 1.38179);
+        transform: scaleX(0.72796)
+    }
+    to {
+        transform: scaleX(0.08)
+    }
+}
+
+
+/* **************************************** */
+
+@mixin menu_3dot {
+    &>input {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+    svg {
+        fill: $gray;
+        pointer-events: none;
+    }
+    &:hover {
+        background: $l-gray;
+        cursor: pointer;
+    }
+    .opts {
+        box-shadow: $bx-sh-g;
+        border-radius: 6px;
+        background: white;
+        position: absolute;
+        // top: 38px;
+        // right: 0;
+        top: 0;
+        right: 38px;
+        width: 133px;
+        overflow: hidden;
+        display: none;
+        li {
+            text-align: center;
+            padding: 12px;
+            &:hover {
+                background: $l-blue;
+                cursor: pointer;
+                color: $blue;
+            }
+        }
+    } //.opts
+}
+
+
+/* **************************************** */
+
+// -- Chapter : Display Flexbox
+@mixin f-ccr {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row wrap;
+}
+
+@mixin f-ccc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column wrap;
+}
+
+@mixin f-ucr {
+    display: flex;
+    justify-content: unset;
+    align-items: center;
+    flex-flow: row wrap;
+}
+
+@mixin f-ucc {
+    display: flex;
+    justify-content: unset;
+    align-items: center;
+    flex-flow: column wrap;
+}
+
+@mixin f-cur {
+    display: flex;
+    justify-content: center;
+    align-items: unset;
+    flex-flow: row wrap;
+}
+
+@mixin f-cuc {
+    display: flex;
+    justify-content: center;
+    align-items: unset;
+    flex-flow: column wrap;
+}
+
+@mixin f-sbur {
+    display: flex;
+    justify-content: space-between;
+    align-items: unset;
+    flex-flow: row wrap;
+}
+
+@mixin f-sbuc {
+    display: flex;
+    justify-content: space-between;
+    align-items: unset;
+    flex-flow: column wrap;
+}
+
+@mixin f-sbcr {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-flow: row wrap;
+}
+
+@mixin f-sbfr {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-flow: row wrap;
+}
+
+@mixin f-sbfc {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-flow: column wrap;
+}
+
+@mixin f-sbur {
+    display: flex;
+    justify-content: space-between;
+    align-items: unset;
+    flex-flow: row wrap;
+}
+
+@mixin f-sbuc {
+    display: flex;
+    justify-content: space-between;
+    align-items: unset;
+    flex-flow: column wrap;
+}
+
+@mixin f-saur {
+    display: flex;
+    justify-content: space-around;
+    align-items: unset;
+    flex-flow: row wrap;
+}
+
+@mixin f-sauc {
+    display: flex;
+    justify-content: space-around;
+    align-items: unset;
+    flex-flow: column wrap;
+}
+
+@mixin f-sacr {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-flow: row wrap;
+}
+
+@mixin f-safr {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-flow: row wrap;
+}
+
+@mixin f-safc {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-flow: column wrap;
+}
+
+@mixin f-saur {
+    display: flex;
+    justify-content: space-around;
+    align-items: unset;
+    flex-flow: row wrap;
+}
+
+@mixin f-sauc {
+    display: flex;
+    justify-content: space-around;
+    align-items: unset;
+    flex-flow: column wrap;
+}
+
+@mixin f-ufr {
+    display: flex;
+    justify-content: unset;
+    align-items: flex-start;
+    flex-flow: row wrap;
+}
+
+@mixin f-ufc {
+    display: flex;
+    justify-content: unset;
+    align-items: flex-start;
+    flex-flow: column wrap;
+}
+
+@mixin f-cfr {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-flow: row wrap;
+}
+
+@mixin f-cfc {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-flow: column wrap;
+}
+
+@mixin f-uur {
+    display: flex;
+    justify-content: unset;
+    align-items: unset;
+    flex-flow: row wrap;
+}
+
+@mixin f-uuc {
+    display: flex;
+    justify-content: unset;
+    align-items: unset;
+    flex-flow: column wrap;
+}
+
+
+/* **************************************** */

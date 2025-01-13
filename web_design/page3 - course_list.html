@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./scss/style.css">
+</head>
+
+<body>
+    <nav class="main_nav">
+        <div class="left_side">
+            <img src="./res/img/other-img/bdu-logo.png" alt="logo" class="bdu_logo">
+            <div class="title">Student Attendance System</div>
+        </div>
+        <div class="middle_side">
+            <button class="active">Course List</button>
+            <!-- <button>Course List</button> -->
+            <button>Create New</button>
+            <!-- <button class="active">Create New</button> -->
+            <!-- <button class="active">Enroll Now</button> -->
+            <!-- <button>Enroll Now</button> -->
+        </div>
+        <!-- .middle_side -->
+        <div class="right_side">
+            <svg class="refresh_icon" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 96 960 960" width="48">
+                <path
+                    d="M480 896q-133 0-226.5-93.5T160 576q0-133 93.5-226.5T480 256q85 0 149 34.5T740 385V256h60v254H546v-60h168q-38-60-97-97t-137-37q-109 0-184.5 75.5T220 576q0 109 75.5 184.5T480 836q83 0 152-47.5T728 663h62q-29 105-115 169t-195 64Z" />
+            </svg>
+            <button class="logout_btn">
+                <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 96 960 960" width="48">
+                    <path
+                        d="M180 936q-24 0-42-18t-18-42V276q0-24 18-42t42-18h291v60H180v600h291v60H180Zm486-185-43-43 102-102H375v-60h348L621 444l43-43 176 176-174 174Z" />
+                </svg>
+                Logout
+            </button>
+            <div class="img">
+                <img src="./upload/user-img/user.jpg" alt="user img" class="user_img">
+                <div class="name">Bitta Boibhob Barmon</div>
+            </div>
+            <!-- .img -->
+        </div>
+    </nav>
+
+    <div class="scale">
+        <div class="title">Your Created Course List</div>
+        <!-- <div class="title">Your Enrolled Course List</div> -->
+        <div class="search_bar">
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 96 960 960" width="48">
+                <path
+                    d="M796 935 533 672q-30 26-69.959 40.5T378 727q-108.162 0-183.081-75Q120 577 120 471t75-181q75-75 181.5-75t181 75Q632 365 632 471.15 632 514 618 554q-14 40-42 75l264 262-44 44ZM377 667q81.25 0 138.125-57.5T572 471q0-81-56.875-138.5T377 275q-82.083 0-139.542 57.5Q180 390 180 471t57.458 138.5Q294.917 667 377 667Z" />
+            </svg>
+            <input type="text" placeholder="Search Here">
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="create_class_form" style="display:none">
+            <!-- <div class="create_class_form"> -->
+            <div class="wrap">
+                <div class="column1">
+                    <h1>New Course</h1>
+                    <h2>Organize your course material and information in a group by creating and storing data into
+                        course.
+                    </h2>
+                    <br>
+                    <!-- <div class="notice">
+                        <ul>
+                            <li>Only Course Name input field is required.</li>
+                            <li>Class can be deleted when it has no apply form with incomplete process.</li>
+                        </ul>
+                    </div> -->
+                    <!-- .notice -->
+                    <div class="inputbox">
+                        <input type="text" required="" autocomplete="off" spellcheck="false">
+                        <label>Course Name</label>
+                    </div>
+                    <!-- .inputbox -->
+                    <div class="inputbox">
+                        <input type="text" required="" autocomplete="off" spellcheck="false">
+                        <label>Course Code</label>
+                    </div>
+                    <!-- .inputbox -->
+                    <div class="inputbox">
+                        <input type="text" required="" autocomplete="off" spellcheck="false">
+                        <label>Department</label>
+                    </div>
+                    <!-- .inputbox -->
+                    <div class="inputbox">
+                        <input type="text" required="" autocomplete="off" spellcheck="false">
+                        <label>Program</label>
+                    </div>
+                    <!-- .inputbox -->
+                    <div class="inputbox">
+                        <input type="text" required="" autocomplete="off" spellcheck="false">
+                        <label>Session</label>
+                    </div>
+                    <!-- .inputbox -->
+                </div>
+                <!-- .column1 -->
+                <!-- ---- -->
+                <!-- ---- -->
+                <div class="column2">
+                    <img src="http://localhost/bdu_classroom/res/img/google-img/archived_class_colored.svg" alt="image">
+                    <div class="txt">Lets start with a new course.</div>
+                </div>
+                <!-- .column2 -->
+            </div>
+            <!-- .wrap -->
+            <!-- ---- -->
+            <div class="btns">
+                <button class="create">Create Now</button>
+                <button class="reset">Reset</button>
+            </div>
+        </div>
+
+
+
+
+        <div class="join_class_form" style="display:none">
+            <!-- <div class="join_class_form"> -->
+            <div class="wrap">
+                <div class="column1">
+                    <h1>Enroll a Course</h1>
+                    <h2>Ask your teacher for the course id, then enter it here.</h2>
+                    <div class="notice">
+                        <ul>
+                            <li>Course ID must be valid.</li>
+                            <!-- <li>Request your teacher to turn on class admit permission.</li>
+                            <li>Use correct class code according your role Student or Teacher into class.</li> -->
+                        </ul>
+                    </div>
+                    <!-- .notice -->
+                    <div class="inputbox">
+                        <input type="text" required="" autocomplete="off" spellcheck="false">
+                        <label>Course ID</label>
+                    </div>
+                    <!-- .inputbox -->
+                </div>
+                <!-- .column1 -->
+                <!-- ---- -->
+                <!-- ---- -->
+                <div class="column2">
+                    <img src="http://localhost/bdu_classroom/res/img/google-img/archived_class_colored.svg" alt="image">
+                    <div class="txt">Lets start with a new course</div>
+                </div>
+                <!-- .column2 -->
+            </div>
+            <!-- .wrap -->
+            <!-- ---- -->
+            <div class="btns">
+                <button class="create">Enroll Now</button>
+                <button class="reset">Reset</button>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="btns1" style="display:none"> -->
+    <div class="btns1">
+        <button class="open">Open</button>
+        <button class="edit">Edit</button>
+        <button class="delete">Remove</button>
+        <!-- <button class="delete">Unenroll</button> -->
+    </div>
+    <!-- .container -->
+
+
+
+
+    <div id="edit_course_name_modal">
+        <div class="create_class_form">
+            <div class="wrap">
+                <div class="column1">
+                    <h1>Edit Course Details</h1>
+                    <!-- <h2>Organize your course material and information in a group by creating and storing data into
+                        course.
+                    </h2> -->
+                    <br>
+                    <!-- <div class="notice">
+                        <ul>
+                            <li>Only Course Name input field is required.</li>
+                            <li>Class can be deleted when it has no apply form with incomplete process.</li>
+                        </ul>
+                    </div> -->
+                    <!-- .notice -->
+                    <div class="inputbox">
+                        <input type="text" required="" autocomplete="off" spellcheck="false">
+                        <label>Course Name</label>
+                    </div>
+                    <!-- .inputbox -->
+                    <div class="inputbox">
+                        <input type="text" required="" autocomplete="off" spellcheck="false">
+                        <label>Course Code</label>
+                    </div>
+                    <!-- .inputbox -->
+                    <div class="inputbox">
+                        <input type="text" required="" autocomplete="off" spellcheck="false">
+                        <label>Department</label>
+                    </div>
+                    <!-- .inputbox -->
+                    <div class="inputbox">
+                        <input type="text" required="" autocomplete="off" spellcheck="false">
+                        <label>Program</label>
+                    </div>
+                    <!-- .inputbox -->
+                    <div class="inputbox">
+                        <input type="text" required="" autocomplete="off" spellcheck="false">
+                        <label>Session</label>
+                    </div>
+                    <!-- .inputbox -->
+                </div>
+                <!-- .column1 -->
+                <!-- ---- -->
+                <!-- ---- -->
+            </div>
+            <!-- .wrap -->
+            <!-- ---- -->
+            <div class="btns">
+                <button class="create">Update Now</button>
+                <button class="reset">Cancel</button>
+                <!-- <button class="reset">Reset</button> -->
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
