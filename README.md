@@ -1,72 +1,74 @@
 # Student Attendance System
 
-A Java-based Student Attendance System designed for schools, colleges, and universities. The system uses Java Swing for the GUI and MySQL for database management to simplify the process of recording, storing, and reporting student attendance.
+## Overview
+The **Student Attendance System** is a Java-based software solution designed to streamline attendance management for schools, colleges, and universities. It simplifies recording, tracking, and generating reports for student attendance using a user-friendly GUI and secure database integration.
+
+---
 
 ## Features
+- **User-Friendly Interface:** Intuitive design for both students and teachers.
+- **Automated Attendance Records:** Generate attendance reports in PDF format.
+- **Secure Database Integration:** Data managed via MySQL with robust connectivity.
+- **Real-Time Management:** Teachers can create, update, and delete attendance records.
+- **Student-Friendly Access:** Students can view personal attendance and absent records.
 
-- **Automated Attendance Recording**: Teachers can mark student attendance and the system will automatically store the records.
-- **Efficient Data Management**: Store attendance data for each class, and retrieve student attendance easily.
-- **Report Generation**: Automatically generates detailed reports of attendance.
-- **Security**: Ensures the safety of student data with secure database connectivity.
-- **User-friendly Interface**: Built with Java Swing, providing an intuitive and easy-to-use interface for teachers and students.
+---
 
-## Technologies Used
+## Visual Overview
 
-- **Java**: Core programming language used for the backend logic.
-- **Java Swing**: GUI toolkit used for building the desktop interface.
-- **MySQL**: Database management system for storing attendance records.
-- **NetBeans**: IDE used for development.
-- **XAMPP**: Used for local server setup to run MySQL.
+### Login Form
+![Login Form](generated_image_placeholder)  
+*The initial screen for user authentication.*
+
+### Course List Data Table
+![Course List Data Table](generated_image_placeholder)  
+*A table showcasing all courses created by the teacher.*
+
+### Attendance Records Table
+![Attendance Records Table](generated_image_placeholder)  
+*All attendance records displayed for easy tracking.*
+
+### Use Case Diagram
+![Use Case Diagram](generated_image_placeholder)  
+*A visual representation of system interactions.*
+
+### Class Diagram
+![Class Diagram](generated_image_placeholder)  
+*The static model of the Student Attendance System.*
+
+---
+
+## Technical Details
+- **Frontend:** Java Swing
+- **Backend:** MySQL (via XAMPP)
+- **Development Environment:** Apache NetBeans
+- **Architecture:** Repository-based with UML diagrams for structure and clarity
+
+---
 
 ## Installation
+1. **Set Up Database:**
+   - Install [XAMPP](https://www.apachefriends.org/).
+   - Import the provided SQL schema into MySQL.
+2. **Prepare Development Environment:**
+   - Download and install [Apache NetBeans](https://netbeans.apache.org/).
+   - Clone this repository and open the project in NetBeans.
+3. **Run the Application:**
+   - Start the XAMPP server.
+   - Execute the project via NetBeans.
 
-### Prerequisites
+---
 
-- [Java](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html) installed on your system.
-- [NetBeans](https://netbeans.apache.org/) for development and running the project.
-- [XAMPP](https://www.apachefriends.org/index.html) for running MySQL server.
+## Team
+- **Sumon Ahmed** (ID: 1801042)
+- **Bitta Boibhov Barmon** (ID: 1901050)
 
-### Setup Instructions
-
-1. Clone this repository:
-
-    ```bash
-    git clone https://github.com/yourusername/student-attendance-system.git
-    ```
-
-2. Set up MySQL using XAMPP or your preferred MySQL server.
-   - Create a new database named `attendance_system`.
-   - Import the provided `.sql` file to create the necessary tables.
-
-3. Open the project in NetBeans and run the `StudentAttendanceSystem` class.
-
-4. The application should launch, and you will be able to start recording and generating attendance reports.
-
-## Usage
-
-1. **Login**: Teachers and staff log in using the provided credentials.
-2. **Mark Attendance**: Choose a class and mark students as present or absent.
-3. **View Reports**: Generate attendance reports for specific periods.
-4. **Security**: Ensure that all data entered is handled with proper security measures.
-
-## Risk Analysis
-
-- **Privacy and Security**: Sensitive student data is stored securely with encryption.
-- **Technical Risks**: Regular maintenance and support ensure the system runs smoothly.
-- **Operational Risks**: Staff training is provided to avoid disruptions in normal operations.
-
-## Contributing
-
-1. Fork this repository.
-2. Create a new branch (`git checkout -b feature-name`).
-3. Commit your changes (`git commit -am 'Add new feature'`).
-4. Push to the branch (`git push origin feature-name`).
-5. Create a new Pull Request.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+---
 
 ## Acknowledgments
+Special thanks to our mentors, **Farzana Akter** and **Md. Habibur Rahman**, for their invaluable guidance, and to Bangladesh Digital University for the resources and support.
 
-- Thanks to the developers of Java, MySQL, NetBeans, and XAMPP for providing the tools to make this project possible.
+---
+
+## License
+This project is for educational purposes and is not intended for commercial use.
